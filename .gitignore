@@ -3,11 +3,11 @@
 build/
 *.class
 
-# Package Files #
-
-*.jar
-*.war
-*.ear
+## Package Files #
+#
+#*.jar
+#*.war
+#*.ear
 
 # Eclipse Project Files #
 
