@@ -20,27 +20,33 @@ public class BasicServlet extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		// TODO create instance of the CMS
+		WebCMS.init(config);
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO handle request
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		WebCMS.getInstance().doGet(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO handler request
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		WebCMS.getInstance().doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doHead(HttpServletRequest, HttpServletResponse)
 	 */
-	protected void doHead(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doHead(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		// TODO let generate only head informations
 		super.doHead(request, response);
 	}
