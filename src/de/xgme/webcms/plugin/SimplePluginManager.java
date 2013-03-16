@@ -236,11 +236,15 @@ public class SimplePluginManager implements PluginManager {
 			logger.log(Level.SEVERE, "Error occurred while enabling "+plugin, e);
 			throw e;
 		}
+		
+		// TODO call PluginEnableEvent
 	}
 
 	@Override
 	public void disablePlugin(final Plugin plugin) {
 		if (!isPluginEnabled(plugin)) return;
+		
+		// TODO call PluginDisableEvent
 		
 		try {
 			origins.get(plugin).disablePlugin(plugin);
