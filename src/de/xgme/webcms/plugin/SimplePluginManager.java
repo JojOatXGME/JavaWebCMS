@@ -174,6 +174,7 @@ public class SimplePluginManager implements PluginManager {
 			if (!(newDependencies.isEmpty() && newSoftDependencies.isEmpty())) {
 				dependencies.put(file, newDependencies);
 				softDependencies.put(file, newSoftDependencies);
+				filesToLoad.offer(file);
 				continue pluginloading;
 			}
 			
