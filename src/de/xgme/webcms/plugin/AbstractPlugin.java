@@ -22,4 +22,9 @@ public abstract class AbstractPlugin implements Plugin {
 		return getName().hashCode(); // TODO is that enough?
 	}
 
+	@Override
+	public String toString() {
+		return getDescription().getFullName();
+	}
+
 }
