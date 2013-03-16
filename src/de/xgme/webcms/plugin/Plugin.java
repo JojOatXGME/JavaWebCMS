@@ -1,5 +1,7 @@
 package de.xgme.webcms.plugin;
 
+import java.util.logging.Logger;
+
 import de.xgme.webcms.WebCMS;
 
 public interface Plugin {
@@ -22,6 +24,13 @@ public interface Plugin {
 	 * @return Description object for this plug-in
 	 */
 	public PluginDescription getDescription();
+
+	/**
+	 * Gets the logger for this plug-in.
+	 * This logger normally adds an prefix to every message to show origin of the message.
+	 * @return Logger for this plug-in
+	 */
+	public Logger getLogger();
 
 	/**
 	 * Gets the CMS.
