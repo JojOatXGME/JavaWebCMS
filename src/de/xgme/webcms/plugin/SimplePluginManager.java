@@ -227,14 +227,15 @@ public class SimplePluginManager implements PluginManager {
 	}
 
 	@Override
-	public void enablePlugin(final Plugin plugin) throws Exception {
+	public void enablePlugin(final Plugin plugin) {
 		if (isPluginEnabled(plugin)) return;
 		
+		plugin.getLogger().info("Enabling " + plugin.getDescription().getFullName());
 		try {
 			origins.get(plugin).enablePlugin(plugin);
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error occurred while enabling "+plugin, e);
-			throw e;
+			return;
 		}
 		
 		// TODO call PluginEnableEvent
@@ -246,6 +247,7 @@ public class SimplePluginManager implements PluginManager {
 		
 		// TODO call PluginDisableEvent
 		
+		plugin.getLogger().info("Disabling " + plugin.getDescription().getFullName());
 		try {
 			origins.get(plugin).disablePlugin(plugin);
 		} catch (Exception e) {

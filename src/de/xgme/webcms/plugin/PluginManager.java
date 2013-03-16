@@ -34,7 +34,7 @@ public interface PluginManager {
 
 	public void clearPlugins();
 
-	public void enablePlugin(Plugin plugin) throws Exception;
+	public void enablePlugin(Plugin plugin);
 
 	public void disablePlugin(Plugin plugin);
 
